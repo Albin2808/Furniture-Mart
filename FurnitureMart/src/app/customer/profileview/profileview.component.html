@@ -1,0 +1,23 @@
+<div class="container" *ngFor="let data of customerdataArray">
+    <h1>Profile Details</h1>
+    <div>
+        <label for="name">Name:</label>
+        <span id="name">{{data.name}}</span>
+    </div>
+    <div>
+        <label for="email">Email:</label>
+        <span id="email">{{data.email}}</span>
+    </div>
+    <div>
+        <label for="contact">Contact:</label>
+        <span id="contact">{{data.contact}}</span>
+    </div>
+    <div>
+        <label for="district">District:</label>
+        <span id="district">{{data.district_name}}</span>
+    </div>
+    <div>
+        <label for="location">Location:</label>
+        <span id="location">{{data.location}}</span>
+    </div>
+</div>

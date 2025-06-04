@@ -1,0 +1,88 @@
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-12 col-lg-11">
+            <div class="card card0 rounded-0">
+                <form [formGroup]="paymentform">
+                    <div class="row">
+                        <div class="col-md-5 p-0 box">
+                            <div class="card rounded-0 border-0 card1">
+                                <h3 id="heading1">Payment Summary</h3>
+
+                                <div class="row" *ngFor="let data of cartdataArray">
+                                    <div class="col-4 mt-2 line pl-4">
+                                        <h2 class="bill-head">{{data.furniturename}}</h2>
+                                    </div>
+
+                                    <div class="col-4 mt-2 line pl-3">
+                                        <img src="http://localhost:3000/images/{{ data.fimage }}" class="furniture-icon"
+                                            alt="{{ data.furniturename }}">
+                                    </div>
+
+                                    <div class="col-4 mt-2">
+                                        <h2 class="bill-head">{{data.amount}}</h2>
+                                    </div>
+                                </div>
+
+                                <div class="row" *ngFor="let data of carttotaldataArray">
+                                    <div class="col-12 red-bg">
+                                        <p class="bill-date" id="total-label">Total Price</p>
+                                        <h2 class="bill-head" id="total">{{data.grndtotal}}</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-7 p-0 box">
+                            <div class="card rounded-0 border-0 card2" id="paypage">
+                                <div class="form-card">
+                                    <h2 id="heading2" class="text-danger">Payment Method</h2>
+                                    <div class="radio-group">
+                                        <div class='radio' data-value="credit"><img src="https://i.imgur.com/28akQFX.jpg"
+                                                width="200px" height="60px"></div>
+                                        <div class='radio' data-value="paypal"><img src="https://i.imgur.com/5QFsx7K.jpg"
+                                                width="200px" height="60px"></div>
+                                        <br>
+                                    </div>
+                                    <label class="pay">Name</label>
+                                    <input type="text" formControlName="name" placeholder="Name" [value]="customerdataArray[0]?.name">
+                                    
+                                    <label class="pay">Email</label>
+                                    <input type="text" formControlName="email" placeholder="Email" [value]="customerdataArray[0]?.email">
+                                    
+                                    <div class="row">
+                                        <div class="col-8 col-md-6">
+                                            <label class="pay">Card Number</label>
+                                            <input type="text" formControlName="card" id="cr_no"
+                                                placeholder="0000-0000-0000-0000" minlength="19" maxlength="19">
+                                        </div>
+                                        <div class="col-4 col-md-6">
+                                            <label class="pay">CVV</label>
+                                            <input type="password" name="cvcpwd" placeholder="&#9679;&#9679;&#9679;"
+                                                class="placeicon" minlength="3" maxlength="3">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <label class="pay">Expiration Date</label>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <input type="text" name="exp" id="exp" placeholder="MM/YY" minlength="5"
+                                                maxlength="5">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <button type="submit" class="btn btn-danger btn-lg btn-block"(click)="OnSubmit()">
+                                                Make Payment
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

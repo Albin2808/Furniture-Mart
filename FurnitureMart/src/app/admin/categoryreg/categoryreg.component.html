@@ -1,0 +1,30 @@
+<div class="col-12 grid-margin stretch-card">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Category Registration</h4>
+      <form class="forms-sample" [formGroup]="categoryregformgroup">
+        <p class="card-description">
+        </p>
+        <div class="form-group">
+          <label for="exampleInputName1">Category Name</label>
+          <input type="text" class="form-control" formControlName="categoryname" placeholder="Name">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail3">Description</label>
+          <input type="email" class="form-control" formControlName="description" placeholder="description">
+        </div>
+        <div class="form-group">
+          <label>Image upload</label>
+          <input type="file" name="img[]" class="file-upload-default">
+          <div class="input-group col-xs-12">
+            <input type="file" class="form-control file-upload-info" formControlName="image" (change)="selectFile($event)" placeholder="Upload Image">
+          </div>
+          </div>
+            <div class="field margin_0">
+              <label class="label_field hidden"></label>
+              <button class="main_bt" (click)="onSubmit()" class="btn btn-primary mr-2">Submit</button>
+            </div>
+      </form>
+    </div>
+  </div>
+</div>

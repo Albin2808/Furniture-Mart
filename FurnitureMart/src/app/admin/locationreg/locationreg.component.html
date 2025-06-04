@@ -1,0 +1,37 @@
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-md-6 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Location Registration</h4>
+                        <form class="forms-sample" [formGroup]="locationregformgroup">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <!-- <div class="form-group row"> -->
+                                        <select  formControlName="districtid" placeholder="District" style="width: 150px;">
+                                            <!-- <div class="col-sm-9"> -->
+                                                <option value="1">...Choose District...</option>
+                                                <!-- this.DistrictdataArray = data.sort((a, b) => a.district_name.localeCompare(b.district_name)); -->
+                                                   
+                                                <option *ngFor="let data of DistrictdataArray"  value="{{data.district_id}}">{{data.district_name}}</option> -->
+                                            <!-- </div> -->
+                                        </select>
+                                    <!-- </div> -->
+                                </div>
+                            </div>
+                            <br>
+                            <br>
+                            <div class="form-group">
+                                <input type="text" class="form-control" formControlName="locationname" placeholder="Location name">
+                             
+                            </div>
+                            <button type="submit" (click)="OnSubmit()" class="btn btn-primary mr-2">REGISTER</button>
+                            <button type="reset"  class="btn btn-danger mr-2">CANCEL</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

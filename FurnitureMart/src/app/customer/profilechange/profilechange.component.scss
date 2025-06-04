@@ -1,0 +1,56 @@
+/* Add this to your existing styles or update your styles.css */
+
+.container {
+    margin-top: 50px; /* Adjust margin-top as needed */
+}
+
+.col-md-6 {
+    background-color: #f8f9fa; /* Light background color for the form container */
+    padding: 20px; /* Adjust padding as needed */
+    border-radius: 8px; /* Add some border-radius for a rounded appearance */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow for depth */
+}
+
+.contact_text {
+    color: #007bff; /* Header text color */
+}
+
+.form-group {
+    margin-bottom: 20px; /* Adjust margin-bottom for space between form groups */
+}
+
+label {
+    font-weight: bold; /* Make labels bold for emphasis */
+    color: #333; /* Label text color */
+}
+
+input,
+select {
+    background-color: #fff; /* Input/select background color */
+    color: #495057; /* Input/select text color */
+    border: 1px solid #ced4da; /* Input/select border color */
+    border-radius: 4px; /* Add some border-radius for a rounded appearance */
+    padding: 10px; /* Adjust padding as needed */
+}
+
+select:hover {
+    cursor: pointer; /* Change cursor on hover for better usability */
+}
+
+button {
+    background-color: #28a745; /* Button background color */
+    color: #fff; /* Button text color */
+    border: 1px solid #218838; /* Button border color */
+    border-radius: 4px; /* Add some border-radius for a rounded appearance */
+    padding: 12px 20px; /* Adjust padding as needed */
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838; /* Change button background color on hover */
+    border-color: #1e7e34; /* Change button border color on hover */
+}
+select.form-control:not([size]):not([multiple])
+ {
+    height: calc(2.25rem + 11px);
+ }

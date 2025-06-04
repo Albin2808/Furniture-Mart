@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="col-md-5 mx-auto">
+        <form [formGroup]="profileform" class="form-group">
+            <h1 class="contact_text text-center mb-4">Profile Details</h1>
+            <!-- Update form control names in your HTML -->
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" placeholder="Enter your name" formControlName="name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="text" class="form-control" placeholder="Enter your email" formControlName="email">
+            </div>
+            <div class="form-group">
+                <label for="contact">Phone Number:</label>
+                <input type="text" class="form-control" placeholder="Enter your phone number" formControlName="contact">
+            </div>
+
+            <!-- Update form control names in your HTML -->
+            <div class="form-group">
+                <label for="district">District:</label>
+                <select id="district" name="district" formControlName="district_id" class="form-control"
+                    (change)="onchange()">
+                    <option value="">Select district</option>
+                    <option *ngFor="let data of districtdataarray" [value]="data.district_id">
+                        {{ data.district_name }}
+                    </option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="location">Location:</label>
+                <select id="location" name="location" formControlName="locationid" class="form-control">
+                    <option value="">Select location</option>
+                    <option *ngFor="let data of locationdataarray" [value]="data.locationid">
+                        {{ data.location }}
+                    </option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block" (click)="onsubmit()">Save</button>
+        </form>
+    </div>
+</div>

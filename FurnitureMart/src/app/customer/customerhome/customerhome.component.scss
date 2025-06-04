@@ -1,0 +1,38 @@
+/* Add this to your CSS styles */
+.fixed-size-image {
+    width: 100%; /* Set the desired width */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 300px; /* Set the maximum width */
+    max-height: 300px; /* Set the maximum height */
+    display: block; /* Remove any extra spacing */
+    margin: 0 auto; /* Center the image */
+ }
+ .container_main {
+    position: relative;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    padding: 10px; /* Adjust padding as needed */
+    text-align: center;
+    color: white;
+  }
+  
+  .small-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+  }
+  
+  .furniture-name {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  

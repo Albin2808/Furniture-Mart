@@ -1,0 +1,27 @@
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Stocks Registration</h4>
+            <p class="card-description">
+            </p>
+            <form class="forms-sample" [formGroup]="stockregformgroup">
+                <div class="form-group">
+                    <label for="exampleInputName1">Furniture Name</label>
+                    <input type="text" class="form-control" formControlName="furniturename"  readonly>
+                    <!-- <input type="hidden" formControlName="furnitureid"> -->
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputName1">Current Stock</label>
+                    <input type="number" class="form-control" formControlName="stockdetails" placeholder="quantity" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail3">Add Stock</label>
+                    <input type="text" class="form-control" formControlName="newstock" placeholder="Description">
+                    <input type="hidden" formControlName="furnitureid">
+                </div>
+                <button type="submit" (click)="OnSubmit()" class="btn btn-primary mr-2">Submit</button>
+                <button class="btn btn-light">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>

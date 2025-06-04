@@ -1,0 +1,69 @@
+/* Add these styles to your CSS file or style block */
+
+.custom-input {
+    width: 24%;
+    padding: 9px;
+    margin-bottom: -23px;
+    border: 6px solid #d6d6d6;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color:#ffffff;
+    display: block;
+  }
+  .lorem_text {
+    margin-bottom: 10px; /* Adjust this margin to control the space between paragraphs */
+  }
+  .line-text 
+  {
+    display: block;
+    margin-right: 10px; /* Adjust the margin as needed */
+
+  display: block;
+  margin-bottom: 10px; /* Adjust the margin as needed */
+  transition: all 0.3s ease; /* Add a smooth transition for a better visual effect */
+}
+
+.line-text:hover {
+  font-size: 90%; /* Shrink the text size on hover */
+  color: rgb(0, 0, 0); /* Change the color on hover */
+}
+.img {
+ max-width: 130%;
+ height: max-content;
+}
+/* Add this to your existing styles or create a new stylesheet */
+.about_text {
+  font-family: 'point panther'; /* Change 'Your Font' to the desired font family */
+  font-size: 30px;
+  color: rgb(0, 0, 0); /* Adjust the font size as needed */
+}
+
+.line-text {
+  font-family: 'Lucida Bright'; /* Change 'Your Font' to the desired font family */
+  font-size: 18px; /* Adjust the font size as needed */
+}
+
+.custom-input {
+  font-family: 'sans-serif'; /* Change 'Your Font' to the desired font family */
+  font-size: 16px;
+  color: rgb(0, 0, 0);  /* Adjust the font size as needed */
+}
+
+.read_bt1 a {
+  font-family: 'sans-serif'; /* Change 'Your Font' to the desired font family */
+  font-size: 16px; /* Adjust the font size as needed */
+  color: #fff; /* Set the text color */
+}
+
+.about_section {
+  background-color: #f6f6f6; /* Set the background color */
+  padding: 20px; /* Add padding as needed */
+}
+
+/* Additional styles for image container */
+.image_1 img {
+  width: 100%; /* Make the image responsive */
+  height: auto;
+}
+
+  

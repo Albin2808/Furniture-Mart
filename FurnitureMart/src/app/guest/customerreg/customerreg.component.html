@@ -1,0 +1,95 @@
+<form [formGroup]="customerregformgroup">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-8 mb-5">
+                <br>
+                <br>
+                <h4 class="text-primary mb-4 text-center">Customer Registration</h4>
+
+                <div class="form-group">
+                    <input type="text" class="form-control" formControlName="name" placeholder="Your Name"
+                        required="required" />
+                </div>
+                <div
+                    *ngIf="customerregformgroup.controls['name'].invalid && (customerregformgroup.controls['name'].dirty || customerregformgroup.controls['name'].touched) || validationstatus">
+                    <div *ngIf="customerregformgroup.controls['name'].errors['required']" style="color: red;">Please
+                        Enter Your Name </div>
+                    <div *ngIf="customerregformgroup.controls['name'].errors['pattern']" style="color: red;">First
+                        letter must be Capital Letter </div>
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" formControlName="email" placeholder="Your Email"
+                        required="required" />
+                </div>
+                <div
+                    *ngIf="customerregformgroup.controls['email'].invalid && (customerregformgroup.controls['email'].dirty || customerregformgroup.controls['email'].touched) || validationstatus">
+                    <div *ngIf="customerregformgroup.controls['email'].errors['required']" style="color: red;">Please
+                        Enter Your Email Address </div>
+                    <div *ngIf="customerregformgroup.controls['email'].errors['email']" style="color: red;">Please check
+                        your format of Email </div>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" formControlName="contact" placeholder="Your Contact"
+                        maxlength="10" />
+                </div>
+                <div
+                    *ngIf="customerregformgroup.controls['contact'].invalid && (customerregformgroup.controls['contact'].dirty || customerregformgroup.controls['contact'].touched) || validationstatus">
+                    <div *ngIf="customerregformgroup.controls['contact'].errors['pattern']" style="color: red;">Only
+                        numeric characters allowed</div>
+                    <div *ngIf="customerregformgroup.controls['contact'].hasError('minlength')" style="color: red;">
+                        Contact number must be at least 10 digits</div>
+                </div>
+                <input type="hidden" formControlName="loginid">
+                <div class="form-group">
+                    <div class="form-group">
+                        <div class="form-group row">
+                            <label for="districtSelect">Select District:</label>
+                            <select formControlName="district_id" class="form-control" (change)="onChange()"
+                                style="width: 100%">
+                                <option value="1" disabled selected>...Choose District...</option>
+                                <option *ngFor="let data of DistrictDataArray" value="{{data.district_id}}">
+                                    {{data.district_name}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-group">
+                        <div class="form-group row">
+                            <label for="locationSelect">Select Location:</label>
+                            <select formControlName="locationid" class="form-control" style="width: 100%;">
+                                <option value="1" disabled selected>...Choose Location...</option>
+                                <option *ngFor="let data of LocationDataArray" value="{{data.locationid}}">
+                                    {{data.location}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" formControlName="username" placeholder="Your Username"
+                        required="required" />
+                </div>
+                <div
+                    *ngIf="(customerregformgroup.controls['username'].invalid && (customerregformgroup.controls['username'].dirty || customerregformgroup.controls['username'].touched)) || validationstatus">
+                    <div *ngIf="customerregformgroup.controls['username'].errors && customerregformgroup.controls['username'].errors['pattern']"
+                        style="color: red;">Only alphanumeric characters allowed</div>
+                </div>
+                
+                <div class="form-group">
+                    <input type="password" class="form-control" formControlName="password" placeholder="Your Password"
+                        required="required" />
+                </div>
+                <div
+                    *ngIf="customerregformgroup.controls['password'].invalid && (customerregformgroup.controls['password'].dirty || customerregformgroup.controls['password'].touched) || validationstatus">
+                    <div *ngIf="customerregformgroup.controls['password'].errors['pattern']" style="color: red;">Only
+                        alphanumeric characters and symbols allowed</div>
+                    <div *ngIf="customerregformgroup.controls['password'].errors && customerregformgroup.controls['password'].errors['minlength']"
+                        style="color: red;">Password must be at least 8 characters long</div>
+                </div>
+                <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="onsubmit()">Submit
+                    Now</button>
+            </div>
+        </div>
+    </div>
+
+</form>

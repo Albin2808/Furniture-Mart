@@ -1,0 +1,37 @@
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-md-6 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Location Registration</h4>
+                        <form class="forms-sample" [formGroup]="locationeditform">
+                            <!-- <input type="hidden" formControlName="locationid"/> -->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <!-- <div class="form-group row"> -->
+                                        <select  formControlName="districtid" class="form-control" placeholder="District">
+                                            <!-- <div class="col-sm-9"> -->
+                                                <option selected value="">...Choose District...</option>
+                                                    <option *ngFor="let data of DistrictdataArray"  value="{{data.district_id}}">{{data.district_name}}</option>
+                                            <!-- </div> -->
+                                        </select>
+                                    <!-- </div> -->
+                                </div>
+                            </div>
+                            <br>
+                            <br>
+                            <div class="form-group">
+                                <input type="text" class="form-control" formControlName="locationname" placeholder="Location name">
+                                <input type= "hidden" formControlName="locationid">
+                            </div>
+                            <!-- <div *ngFor="let data of locationArray"></div> -->
+                            <button type="submit" (click)="OnSubmit()" class="btn btn-primary mr-2">REGISTER</button>
+                            <button type="reset"  class="btn btn-danger mr-2">CANCEL</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

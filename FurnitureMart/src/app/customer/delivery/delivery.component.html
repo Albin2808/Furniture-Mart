@@ -1,0 +1,81 @@
+<div class="contact_section layout_padding custom-background">
+    <div class="container">
+        <div class="col-md-6 mx-auto">
+            <form [formGroup]="deliveryform" class="delivery-form" (ngSubmit)="OnSubmit()">
+                <h1 class="contact_text text-center mb-4">Enter Delivery Information</h1>
+                <div class="form-group">
+                    <label for="district">District:</label>
+                    <select id="district" name="district" formControlName="district_id" class="form-control" (change)="onChange()">
+                        <option value="1">Select district</option>
+                        <option *ngFor="let data of DistrictDataArray" [value]="data.district_id">
+                            {{data.district_name}}
+                        </option>
+                    </select>
+                    <div *ngIf="deliveryform.get('district_id').invalid && deliveryform.get('district_id').touched">
+                        <div *ngIf="deliveryform.get('district_id').errors?.['required']" class="text-danger">District
+                            is required</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="location">Location:</label>
+                    <select id="location" name="location" formControlName="locationid" class="form-control">
+                        <option value="1">Select location</option>
+                        <option *ngFor="let data of LocationDataArray" [value]="data.locationid">
+                            {{data.location}}
+                        </option>
+                    </select>
+                    <div *ngIf="deliveryform.get('locationid').invalid && deliveryform.get('locationid').touched">
+                        <div *ngIf="deliveryform.get('locationid').errors?.['required']" class="text-danger">Location is
+                            required</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" class="form-control" placeholder="Name" formControlName="name">
+                    <div *ngIf="deliveryform.get('name').invalid && deliveryform.get('name').touched">
+                        <div *ngIf="deliveryform.get('name').errors?.['required']" class="text-danger">Name is required
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="housename"></label>
+                    <input type="text" class="form-control" placeholder="House Name" formControlName="housename">
+                    <div *ngIf="deliveryform.get('housename').invalid && deliveryform.get('housename').touched">
+                        <div *ngIf="deliveryform.get('housename').errors?.['required']" class="text-danger">Housename is
+                            required</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="pincode"></label>
+                    <input type="text" class="form-control" placeholder="Pincode" formControlName="pincode" maxlength="6">
+                    <div *ngIf="deliveryform.get('pincode').invalid && deliveryform.get('pincode').touched">
+                        <div *ngIf="deliveryform.get('pincode').errors?.['required']" class="text-danger">Pincode is
+                            required</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="contact"></label>
+                    <input type="text" class="form-control" placeholder="Phone Number" formControlName="contact" maxlength="10">
+                    <div *ngIf="deliveryform.get('contact').invalid && (deliveryform.get('contact').dirty || deliveryform.get('contact').touched) || validationstatus">
+                        <div *ngIf="deliveryform.get('contact').errors?.['pattern']" style="color: red;">Only numeric characters allowed</div>
+                        <div *ngIf="deliveryform.get('contact').hasError('minlength')" style="color: red;">Contact number must be at least 10 digits</div>
+                    </div>
+                </div>
+                
+        <div class="form-group">
+            <label for="place"></label>
+            <input type="text" class="form-control" placeholder="Place" formControlName="place">
+            <div *ngIf="deliveryform.get('place').invalid && deliveryform.get('place').touched">
+                <div *ngIf="deliveryform.get('place').errors?.['required']" class="text-danger">Place is required</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="landmark"></label>
+            <input type="text" class="form-control" placeholder="Landmark" formControlName="landmark">
+        </div>
+        <input type="hidden" formControlName="masterid">
+        <button type="submit" class="btn btn-primary btn-block" (click)="OnSubmit()">Save</button>
+        </form>
+    </div>
+</div>
+</div>

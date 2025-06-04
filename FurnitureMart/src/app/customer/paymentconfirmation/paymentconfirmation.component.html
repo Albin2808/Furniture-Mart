@@ -1,0 +1,40 @@
+<div class="bg">
+  <form [formGroup]="paymentform">
+    <div class="card">
+
+      <span class="card__success"><i class="ion-checkmark"></i></span>
+
+      <h1 class="card__msg">Payment Completed</h1>
+      <h2 class="card__submsg">Thank you for your transfer</h2>
+
+      <div class="card__body">
+
+
+        <div class="card__recipient-info" *ngFor="let data of customerdataArray">
+          <p class="card__recipient">{{data.name}}</p>
+          <p class="card__email">{{data.email}}</p>
+        </div>
+        <div class="card__price" *ngFor="let data of carttotaldataArray">
+          <h4 class="card__price">Rs.{{data.grndtotal}}</h4>
+        </div>
+        <p class="card__method">Payment method</p>
+        <div class="card__payment">
+          <img src="/assets/customer/images/visa.png" class="card__credit-card">
+          <div class="card__card-details">
+            <p class="card__card-type">Credit / debit card</p>
+            <p class="card__card-number">Visa ending in **89</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="card__tags">
+        <span class="card__tag">completed</span>
+        <span class="card__tag">#123456789</span>
+      </div>
+      <button type="submit" class="btn btn-danger btn-lg btn-block"(click)="OnSubmit()">
+        Confirm
+    </button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,47 @@
+/* Custom Cart Styles */
+.cart-form {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.cart-form table {
+    width: 100%;
+}
+
+.cart-form th, .cart-form td {
+    text-align: center;
+}
+
+.cart-form img {
+    max-width: 80px;
+    height: auto;
+}
+
+.quantity-container {
+    justify-content: center;
+}
+
+.update-cart-btn,
+.continue-shopping-btn,
+.proceed-to-checkout-btn {
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.update-cart-btn {
+    background-color: #343a40;
+    color: #fff;
+}
+
+.continue-shopping-btn {
+    background-color: transparent;
+    color: #343a40;
+    border: 1px solid #343a40;
+}
+
+.proceed-to-checkout-btn {
+    background-color: #28a745;
+    color: #fff;
+}

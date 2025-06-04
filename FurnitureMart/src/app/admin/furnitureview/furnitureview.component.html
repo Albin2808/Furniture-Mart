@@ -1,0 +1,68 @@
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Furniture View</h4>
+            <form class="forms-sample" [formGroup]="furnitureview">
+                <select formControlName="categoryid" placeholder="District" style="
+                width: 150px;"(change)="onChange()">
+                    <!-- <div class="col-sm-9"> -->
+                    <option value="">...Choose Category...</option>
+                    <option *ngFor="let data of CategorydataArray" value="{{data.categoryid}}">{{data.categoryname}}
+                    </option>
+                    <!-- </div> -->
+                </select>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Sl No
+                                </th>
+                                <th>
+                                    Furniture name
+                                </th>
+                                <th>
+                                    Description
+                                 </th>
+                                 <th>
+                                    size 
+                                 </th>
+                                 <th>
+                                    Stocks Available 
+                                 </th>
+                                 <th>
+                                    Amount
+                                 </th>
+                                 <th>
+                                    Image
+                                 </th>
+                                <th>
+                                  Edit
+                                </th>
+                                <th>
+                                    Delete
+                                  </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="table-info" *ngFor="let data of FurnituredataArray,let i=index">
+                                <td> {{i+1}} </td>
+                                <td> {{data.furniturename}} </td>
+                                <td> {{data.description}} </td>
+                                <td> {{data.size}} </td>
+                                <td> {{data.stock}} </td>
+                                <td> {{data.amount}} </td>
+                                <td class="text-danger"><img style="width:50px;height:50px;"
+                                    src="http://localhost:3000/images/{{data.fimage}}"></td>
+                                <td><a [routerLink]="['/adminmaster/furnitureedit',data.furnitureid]"><button type="reset" class="btn-primary"><i class="mdi mdi-table-edit"></i></button></a></td>
+                                <td> <button type="submit"  class="btn-danger"  onclick="return confirm('Are you sure you want to delete?');"
+                                    (click)="Deletefurnituredata(data.furnitureid)"><i  class="mdi mdi-delete"></i></button></td>
+                                    <td><a [routerLink]="['/adminmaster/stock',data.furnitureid]"><button type="reset" class="btn-primary">stock</button></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
